@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class DetailsViewController: UIViewController {
 
@@ -25,10 +26,19 @@ class DetailsViewController: UIViewController {
         }
     }
     
+    // Let's the user share a image on Facebook
     func shareTapped() {
-        let vc = UIActivityViewController(activityItems: [imageView.image!], applicationActivities: [])
+        if let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
+            vc.setInitialText("Look at this picture!")
+            vc.add(imageView.image!)
+            vc.add(URL(string: "http://www.photolib.noaa.gov/nssl"))
+            present(vc, animated: true)
+        }
+        
+        
+        /*let vc = UIActivityViewController(activityItems: [imageView.image!], applicationActivities: [])
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
-        present(vc, animated: true)
+        present(vc, animated: true)*/
     }
     
     // Makes the navigationbar disappear on tap
