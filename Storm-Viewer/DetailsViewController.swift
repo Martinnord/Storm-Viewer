@@ -18,9 +18,17 @@ class DetailsViewController: UIViewController {
 
         title = selectedImage
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+        
         if let imageToLoad = selectedImage {
             imageView.image = UIImage(named: imageToLoad)
         }
+    }
+    
+    func shareTapped() {
+        let vc = UIActivityViewController(activityItems: [imageView.image!], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
     }
     
     // Makes the navigationbar disappear on tap
@@ -30,6 +38,8 @@ class DetailsViewController: UIViewController {
     }
     // Makes the navigationbar appear on tap
     override func viewWillDisappear(_ animated: Bool) {
+
+        
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnTap = false
     }
