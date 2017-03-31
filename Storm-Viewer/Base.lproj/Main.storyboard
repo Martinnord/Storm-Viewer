@@ -61,21 +61,35 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x8f-Wr-qiC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="WGo-2a-QmY" appends="YES" id="lQb-Je-pis"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="x8f-Wr-qiC" firstAttribute="bottom" secondItem="VAG-zr-62V" secondAttribute="top" id="DOh-eK-oKY"/>
                             <constraint firstAttribute="trailing" secondItem="x8f-Wr-qiC" secondAttribute="trailing" id="OSy-5p-WaN"/>
                             <constraint firstItem="x8f-Wr-qiC" firstAttribute="leading" secondItem="0nK-zO-95Q" secondAttribute="leading" id="TMD-D5-SQW"/>
                             <constraint firstItem="x8f-Wr-qiC" firstAttribute="top" secondItem="0nK-zO-95Q" secondAttribute="top" id="ZyX-lY-6Zf"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7iG-be-d7M" appends="YES" id="9sn-hF-BRl"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="x8f-Wr-qiC" id="Jam-UG-eaf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DuM-F2-wAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="WGo-2a-QmY"/>
+                <swipeGestureRecognizer cancelsTouchesInView="NO" direction="right" id="7iG-be-d7M">
+                    <connections>
+                        <action selector="rightSwipe:" destination="9Da-uZ-hpk" id="Xg9-En-3pb"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2429.5999999999999" y="151.57421289355324"/>
         </scene>
