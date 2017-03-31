@@ -19,7 +19,7 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Kami 2 Solutions"
+        title = "xxxxxx"
         
         let fm = FileManager.default // Data type that let us work with filesystems
         let path = Bundle.main.resourcePath! // Resourse path of apps bundle. "!" - Implicity unwrapped optional

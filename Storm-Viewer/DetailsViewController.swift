@@ -86,7 +86,7 @@ class DetailsViewController: UIViewController, UICollectionViewDataSource, UICol
         if let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter) {
             vc.setInitialText("Share the solution")
             vc.add(imageView.image!)
-            vc.add(URL(string: "http://www.photolib.noaa.gov/nssl"))
+            vc.add(URL(string: "LINK WILL COME"))
             present(vc, animated: true)
         }
     }
